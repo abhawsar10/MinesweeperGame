@@ -1,0 +1,129 @@
+#minesweeper-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+  }
+  
+  #minesweeper-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  #game-seed-input {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  #game-seed-input input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  #game-seed-input button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #game-seed-input button:hover {
+    background-color: #45a049;
+  }
+  
+  .minefield {
+    display: grid;
+    gap: 2px;
+    background-color: #ccc;
+    padding: 2px;
+    border: 3px solid #999;
+    border-radius: 4px;
+  }
+  
+  .mine {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .mine .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bdbdbd;
+    border: 2px outset #fff;
+    box-sizing: border-box;
+  }
+  
+  .mine .overlay:hover {
+    background-color: #a8a8a8;
+  }
+  
+  .nearby-count {
+    font-family: 'Arial', sans-serif;
+    color: black;
+  }
+  
+  /* Color coding for numbers */
+  .mine .nearby-count:not(:empty) {
+    font-weight: bold;
+  }
+  
+  .mine:not(.live)[style*="display: none"] .nearby-count {
+    color: black;
+  }
+  
+  /* Color coding for different numbers */
+  .mine:not(.live)[style*="display: none"] .nearby-count:not(:empty) {
+    color: #1976D2; /* 1 - Blue */
+  }
+  
+  .mine:not(.live)[style*="display: none"] .nearby-count[data-count="2"] {
+    color: #388E3C; /* 2 - Green */
+  }
+  
+  .mine:not(.live)[style*="display: none"] .nearby-count[data-count="3"] {
+    color: #D32F2F; /* 3 - Red */
+  }
+  
+  .mine:not(.live)[style*="display: none"] .nearby-count[data-count="4"] {
+    color: #7B1FA2; /* 4 - Purple */
+  }
+  
+  .mine:not(.live)[style*="display: none"] .nearby-count[data-count="5"] {
+    color: #FF6F00; /* 5 - Orange */
+  }
+  
+  #minesweeper-game-over {
+    margin-top: 20px;
+    padding: 15px 25px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  #minesweeper-game-over:hover {
+    background-color: #d32f2f;
+  }
